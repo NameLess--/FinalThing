@@ -9,7 +9,7 @@ public class Client {
 
         System.out.println(betrag + " € sind " + chain.umrechnen("Euro2Yen", betrag) + " YEN.");
 
-        ISammelUmrechnung sammelChain = new SammelUmrechung(createChain()); 
+        ISammelUmrechnung sammelChain = new SammelUmrechung(createChain());
         double[] betraege = {10.0, 14.0, 28.0};
         System.out.println("Die Summe von " + betraegeToString(betraege) + " in €uro ergibt als Summe in Yen: " + sammelChain.sammelUmrechnen(betraege, "Euro2Yen"));
     }
@@ -34,6 +34,7 @@ public class Client {
         WR EuroDollarRechner = new Euro2Dollar();
         WR EuroYenRechner = new Euro2Yen();
         WR DollarYenRechner = new Dollar2Yen();
+        WR DollarYenRechner1 = new Dollar2Yen();
 
         WR DollarYenLogging = new LoggingDekorierer(DollarYenRechner);
         WR EuroYenGebuehren = new GebuehrenDekorierer(EuroYenRechner, 0.5);
